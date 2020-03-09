@@ -43,7 +43,7 @@ class Item extends \Magento\Framework\Model\AbstractModel implements \Magento\Fr
      */
     protected function _construct()
     {
-        $this->_init('Rukhsar\Faq\Model\ResourceModel\Item');
+        $this->_init('Rukhsar\Faq\Model\ResourceModel\Item', 'id');
     }
 
     /**

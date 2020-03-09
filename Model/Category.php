@@ -19,11 +19,17 @@ class Category extends \Magento\Framework\Model\AbstractModel implements \Magent
      */
     protected $_eventPrefix = 'category';
 
+    /*
+     *
+     */
+    protected $urlInterface;
+
     /**
      * @param \Magento\Framework\Model\Context $context
      * @param \Magento\Framework\Registry $registry
      * @param \Magento\Framework\Model\ResourceModel\AbstractResource $resource
      * @param \Magento\Framework\Data\Collection\AbstractDb $resourceCollection
+     * @param \Magento\Framework\UrlInterface $urlInterface
      * @param array $data
      */
     public function __construct(
@@ -31,6 +37,7 @@ class Category extends \Magento\Framework\Model\AbstractModel implements \Magent
         \Magento\Framework\Registry $registry,
         \Magento\Framework\Model\ResourceModel\AbstractResource $resource = null,
         \Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
+        \Magento\Framework\UrlInterface $urlInterface,
         array $data = []
     ) {
         parent::__construct($context, $registry, $resource, $resourceCollection, $data);
@@ -43,7 +50,7 @@ class Category extends \Magento\Framework\Model\AbstractModel implements \Magent
      */
     protected function _construct()
     {
-        $this->_init('Rukhsar\Faq\Model\ResourceModel\Category');
+        $this->_init('Rukhsar\Faq\Model\ResourceModel\Category', 'id');
     }
 
     /**
@@ -54,5 +61,15 @@ class Category extends \Magento\Framework\Model\AbstractModel implements \Magent
     public function getIdentities()
     {
         return [self::CACHE_TAG . '_' . $this->getId()];
+    }
+
+    /**
+     * Return url for a given FAQ
+     *
+     * @return mixed
+     */
+    public function getUrl()
+    {
+        return $this->urlInterface->getUrl('faq/category/view', ['id' => $this->getData('id')]);
     }
 }

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Rukhsar_Faq::section" title="FAQ" module="Rukhsar_Faq" sortOrder="0" parent="Magento_Backend::content" resource="Magento_Backend::content" />
+        <add id="Rukhsar_Faq::categories" title="Categories" module="Rukhsar_Faq" sortOrder="1" parent="Rukhsar_Faq::section" action="rukhsar_faq/categories" resource="Rukhsar_Faq::categories" />
+        <add id="Rukhsar_Faq::groups" title="Groups" module="Rukhsar_Faq" sortOrder="2" parent="Rukhsar_Faq::section" action="rukhsar_faq/groups" resource="Rukhsar_Faq::groups" />
+        <add id="Rukhsar_Faq::items" title="Items" module="Rukhsar_Faq" sortOrder="3" parent="Rukhsar_Faq::section" action="rukhsar_faq/items" resource="Rukhsar_Faq::items" />
+    </menu>
+</config>
