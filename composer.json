@@ -1,17 +1,25 @@
 {
     "name": "rukhsar/faq",
-    "description": "",
+    "description": "A frequently asked questions module for Magento 2.",
     "type": "magento2-module",
     "version": "1.0.0",
     "license": [
       "MIT"
     ],
+    "authors": [
+        {
+          "name": "Rukhsar Manzoor",
+          "email": "rukhsar.man@gmail.com",
+          "homepage": "https://github.com/Rukhsar/",
+          "role": "Developer"
+        }
+    ],
     "autoload": {
-      "psr-4": {
-        "Rukhsar\\Faq\\": ""
-      },
-      "files": [
-        "registration.php"
-      ]
+        "psr-4": {
+          "Rukhsar\\Faq\\": ""
+        },
+        "files": [
+          "registration.php"
+        ]
+      }
     }
-  }

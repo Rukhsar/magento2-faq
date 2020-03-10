@@ -1,0 +1,13 @@
+<?php $items = $this->getItems(); ?>
+<?php if ($items->count()>0): ?>
+    <div class="faq-categories">
+        <h3><?php echo __('Categories'); ?></h3>
+        <ul>
+            <?php foreach($items as $item): ?>
+                <li>
+                    <a href="<?php echo $item->getUrl(); ?>"><?php echo $item->getTitle(); ?></a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+<?php endif; ?>

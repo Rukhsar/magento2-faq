@@ -1,0 +1,101 @@
+.faq-category {
+    display: table;
+    width: 100%;
+}
+.faq-category::after {
+    display: block;
+    content: "";
+    width: 100%;
+    clear: both;
+}
+.faq-category .ui-tabs-nav {
+    padding: 0;
+    list-style: none;
+}
+.faq-category .ui-tabs-nav li {
+    display: block;
+    list-style: none;
+    background: #f6f6f6;
+}
+.faq-category .ui-tabs-nav li+li {
+    border-top: 1px solid #c5c5c5;
+}
+.faq-category .ui-tabs-nav li a {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+}
+.faq-category .ui-tabs-nav li.ui-state-focus a {
+    outline: none !important;
+}
+.faq-category .ui-tabs-nav li a {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: bold;
+    text-decoration: none !important;
+    color: #454545;
+}
+.faq-category .ui-tabs-nav li.ui-state-hover {
+    background: #ededed;
+}
+.faq-category .ui-tabs-nav li.ui-state-hover a {
+    color: #2b2b2b;
+}
+.faq-category .ui-tabs-nav li.ui-state-active {
+    background: #007fff;
+}
+.faq-category .ui-tabs-nav li.ui-state-active a {
+    color: #fff;
+}
+.faq-category .ui-tabs-panel {
+    padding-left: 10px;
+}
+.faq-category .ui-accordion .ui-accordion-header {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0;
+    padding: 10px;
+    background: #f6f6f6;
+    color: #454545;
+}
+.faq-category .ui-accordion .ui-accordion-header.ui-state-hover {
+    background: #ededed;
+    color: #2b2b2b;
+}
+.faq-category .ui-accordion .ui-accordion-header.ui-state-active {
+    background: #007fff;
+    color: #ffffff;
+}
+.faq-category .ui-accordion .ui-accordion-content {
+    overflow: auto;
+}
+.faq-category .ui-accordion .ui-accordion-content ul li p:last-child {
+    margin: 0;
+}
+.faq-category .ui-accordion .ui-accordion-content ul {
+    padding: 10px;
+}
+.faq-category .ui-accordion .ui-accordion-content ul li {
+    padding: 5px 0;
+}
+.faq-category .ui-accordion .ui-accordion-content ul li+li {
+    border-top: 1px solid #c5c5c5;
+}
+.faq-categories {
+    margin-bottom: 20px;
+}
+.faq-categories h3 {
+    margin: 0 0 10px 0;
+}
+.faq-categories ul li a {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    color: #454545;
+    text-decoration: none;
+}
+.faq-categories ul li a:hover {
+    background: #f6f6f6;
+}

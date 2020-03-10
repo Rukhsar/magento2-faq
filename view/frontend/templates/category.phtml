@@ -1,1 +1,62 @@
-<h2>Faq Frontend Page</h2>
+<?php if ($this->getGroups()->count() > 0): ?>
+    <table class="faq-category">
+        <tr>
+            <td width="25%">
+                <ul>
+                    <?php foreach($this->getGroups() as $group): ?>
+                        <li>
+                            <a href="#faq-group-<?php echo $group->getData('id'); ?>">
+                                <?php echo $group->getData('title'); ?>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </td>
+            <td width="75%">
+                <?php foreach($this->getGroups() as $group): ?>
+                    <div id="faq-group-<?php echo $group->getData('id'); ?>">
+                        <?php $items = $group->getItems(); ?>
+                        <?php if($items->count()>0): ?>
+                            <div class="faq-group">
+                                <?php foreach($items as $item): ?>
+                                    <h3><?php echo $item->getData('title'); ?></h3>
+                                    <div>
+                                        <ul>
+                                            <li class="faq-group-question">
+                                                <?php echo $item->getData('question'); ?>
+                                            </li>
+                                            <li class="faq-group-answer">
+                                                <?php echo $item->getData('answer'); ?>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                <?php endforeach; ?>
+            </td>
+        </tr>
+    </table>
+    <script type="text/javascript">
+        require(['jquery', 'jquery/ui'], function(jQuery){
+            jQuery(function(){
+                if(jQuery(".faq-category").length){ // if exist
+                    jQuery(".faq-category").each(function(){ // for every
+                        if(jQuery(this).attr('faq-init') != 'true'){ // only not init
+                            // setup tabs
+                            jQuery(this).tabs().addClass("ui-tabs-vertical ui-helper-clearfix");
+                            jQuery(this).find('li').removeClass("ui-corner-top").addClass("ui-corner-left");
+                            // setup accordion
+                            jQuery(this).find('.faq-group').each(function(){
+                                jQuery(this).accordion({heightStyle: "content"});
+                            });
+                            jQuery(this).attr('faq-init', 'true');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->getViewFileUrl('Rukhsar_Faq::css/styles.css'); ?>">
+<?php endif; ?>

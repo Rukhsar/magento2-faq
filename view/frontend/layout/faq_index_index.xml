@@ -10,5 +10,8 @@
         <referenceContainer name="content">
             <block class="Rukhsar\Faq\Block\Category" name="Rukhsar_Faq_Category" template="Rukhsar_Faq::category.phtml" />
         </referenceContainer>
+        <referenceContainer name="sidebar.additional">
+            <block class="Rukhsar\Faq\Block\Category\Sidebar" template="Rukhsar_Faq::category/sidebar.phtml" before="-" />
+        </referenceContainer>
     </body>
 </page>
