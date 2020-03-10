@@ -6,6 +6,7 @@
     "license": [
       "MIT"
     ],
+    "minimum-stability": "dev",
     "authors": [
         {
           "name": "Rukhsar Manzoor",
