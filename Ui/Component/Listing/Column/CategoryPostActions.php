@@ -7,17 +7,50 @@ use Magento\Ui\Component\Listing\Columns\Column;
 use Magento\Framework\View\Element\UiComponentFactory;
 use Magento\Framework\View\Element\UiComponent\ContextInterface;
 
+/**
+ * Class CategoryPostActions
+ *
+ * @package Rukhsar\Faq\Ui\Component\Listing\Column
+ * @author  Rukhsar Manzoor <rukhsar.man@gmail.com>
+ *
+ */
 class CategoryPostActions extends Column
 {
+    /**
+     *
+     */
     const EDIT = 'rukhsar_faq/categories/edit';
+    /**
+     *
+     */
     const DELETE = 'rukhsar_faq/categories/delete';
 
+    /**
+     * @var \Magento\Framework\UrlInterface
+     */
     protected $urlBuilder;
 
+    /**
+     * @var string
+     */
     private $editUrl;
 
+    /**
+     * @var string
+     */
     private $deleteUrl;
 
+    /**
+     * CategoryPostActions constructor.
+     *
+     * @param \Magento\Framework\View\Element\UiComponent\ContextInterface $context
+     * @param \Magento\Framework\UrlInterface                              $urlBuilder
+     * @param \Magento\Framework\View\Element\UiComponentFactory           $uiComponentFactory
+     * @param array                                                        $components
+     * @param array                                                        $data
+     * @param string                                                       $editUrl
+     * @param string                                                       $deleteUrl
+     */
     public function __construct(
         ContextInterface $context,
         UrlInterface $urlBuilder,
@@ -34,6 +67,11 @@ class CategoryPostActions extends Column
         parent::__construct($context, $uiComponentFactory, $components, $data);
     }
 
+    /**
+     * @param array $dataSource
+     *
+     * @return array
+     */
     public function prepareDataSource(array $dataSource){
         if (isset($dataSource['data']['items'])) {
             foreach ($dataSource['data']['items'] as & $item) {

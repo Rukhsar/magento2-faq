@@ -1,4 +1,10 @@
 <?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="Rukhsar\Faq\Api\Data\CategoryInterface" type="Rukhsar\Faq\Model\Category" />
     <virtualType name="RukhsarFaqCategoriesGridFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
@@ -28,4 +34,61 @@
             </argument>
         </arguments>
     </type>
+    <preference for="Rukhsar\Faq\Api\Data\GroupInterface" type="Rukhsar\Faq\Model\Group" />
+    <virtualType name="RukhsarFaqGroupsGridFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="RukhsarFaqGroupsGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Rukhsar\Faq\Model\ResourceModel\Group\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">RukhsarFaqGroupsGridFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Rukhsar\Faq\Model\ResourceModel\Group\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">rukhsar_faq_group</argument>
+            <argument name="resourceModel" xsi:type="string">Rukhsar\Faq\Model\ResourceModel\Group</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="rukhsar_faq_group_data_source" xsi:type="string">Rukhsar\Faq\Model\ResourceModel\Group\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <preference for="Rukhsar\Faq\Api\Data\ItemInterface" type="Rukhsar\Faq\Model\Item" />
+    <virtualType name="RukhsarFaqItemsGridFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="RukhsarFaqItemsGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Rukhsar\Faq\Model\ResourceModel\Item\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">RukhsarFaqItemsGridFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Rukhsar\Faq\Model\ResourceModel\Item\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">rukhsar_faq_item</argument>
+            <argument name="resourceModel" xsi:type="string">Rukhsar\Faq\Model\ResourceModel\Item</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="rukhsar_faq_item_data_source" xsi:type="string">Rukhsar\Faq\Model\ResourceModel\Item\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
 </config>
+

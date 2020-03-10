@@ -1,8 +1,18 @@
 <?php
 namespace Rukhsar\Faq\Model;
 
+/**
+ * Class Category
+ *
+ * @package Rukhsar\Faq\Model
+ * @author  Rukhsar Manzoor <rukhsar.man@gmail.com>
+ *
+ */
 class Category extends \Magento\Framework\Model\AbstractModel implements \Magento\Framework\DataObject\IdentityInterface
 {
+    /**
+     *
+     */
     const CACHE_TAG = 'rukhsar_faq_category';
 
     /**
@@ -21,6 +31,9 @@ class Category extends \Magento\Framework\Model\AbstractModel implements \Magent
 
     /*
      *
+     */
+    /**
+     * @var
      */
     protected $urlInterface;
 

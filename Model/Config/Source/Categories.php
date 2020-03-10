@@ -2,15 +2,32 @@
 
 namespace Rukhsar\Faq\Model\Config\Source;
 
+/**
+ * Class Categories
+ *
+ * @package Rukhsar\Faq\Model\Config\Source
+ * @author  Rukhsar Manzoor <rukhsar.man@gmail.com>
+ */
 class Categories implements \Magento\Framework\Option\ArrayInterface
 {
+    /**
+     * @var \Magento\Framework\ObjectManagerInterface
+     */
     protected $objectManager;
 
+    /**
+     * Categories constructor.
+     *
+     * @param \Magento\Framework\ObjectManagerInterface $objectManager
+     */
     public function __construct(\Magento\Framework\ObjectManagerInterface $objectManager)
     {
         $this->objectManager = $objectManager;
     }
 
+    /**
+     * @return array
+     */
     public function toOptionArray()
     {
         $array = [

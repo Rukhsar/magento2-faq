@@ -3,8 +3,18 @@ namespace Rukhsar\Faq\Model;
 
 use Magento\Framework\ObjectManagerInterface;
 
+/**
+ * Class Group
+ *
+ * @package Rukhsar\Faq\Model
+ * @author  Rukhsar Manzoor <rukhsar.man@gmail.com>
+ *
+ */
 class Group extends \Magento\Framework\Model\AbstractModel implements \Magento\Framework\DataObject\IdentityInterface
 {
+    /**
+     *
+     */
     const CACHE_TAG = 'rukhsar_faq_group';
 
     /**

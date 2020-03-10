@@ -5,8 +5,21 @@ use Magento\Framework\Setup\InstallSchemaInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\SchemaSetupInterface;
 
+/**
+ * Class InstallSchema
+ *
+ * @package Rukhsar\Faq\Setup
+ * @author  Rukhsar Manzoor <rukhsar.man@gmail.com>
+ *
+ */
 class InstallSchema implements InstallSchemaInterface
 {
+    /**
+     * @param \Magento\Framework\Setup\SchemaSetupInterface   $setup
+     * @param \Magento\Framework\Setup\ModuleContextInterface $context
+     *
+     * @throws \Zend_Db_Exception
+     */
     public function install(SchemaSetupInterface $setup, ModuleContextInterface $context)
     {
         $installer = $setup;

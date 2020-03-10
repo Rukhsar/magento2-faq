@@ -1,6 +1,12 @@
 <?php
 namespace Rukhsar\Faq\Controller\Index;
 
+/**
+ * Class Index
+ *
+ * @package Rukhsar\Faq\Controller\Index
+ * @author  Rukhsar Manzoor <rukhsar.man@gmail.com>
+ */
 class Index extends \Magento\Framework\App\Action\Action
 {
     /**

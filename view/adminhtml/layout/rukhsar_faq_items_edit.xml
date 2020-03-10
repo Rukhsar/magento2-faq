@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd" layout="admin-2columns-left">
+    <body>
+        <referenceContainer name="left">
+            <block class="Rukhsar\Faq\Block\Adminhtml\Items\Edit\Tabs" name="rukhsar_faq_items_edit_tabs"/>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="Rukhsar\Faq\Block\Adminhtml\Items\Edit" name="rukhsar_faq_items_edit"/>
+        </referenceContainer>
+    </body>
+</page>
